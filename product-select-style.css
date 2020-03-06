@@ -1,0 +1,195 @@
+/* general links */
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.select-button a {
+  color: white;
+}
+
+/* header */
+
+header {
+  text-align: center;
+  height: 50px;
+  min-width: 1100px;
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 600px 100px;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: rgb(240,240,240);
+  border-bottom-color: rgb(180,180,180);
+  border-bottom-style: solid;
+  border-bottom-width: 0.1px;
+}
+
+.icon.logo {
+  margin-top: 4.5px;
+}
+
+/* main body grids */
+
+main {
+  position: relative;
+  left: 0%;
+  min-width: 1100px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 270px 270px 270px 270px;
+  grid-template-rows: 125px 583px 106px;
+  justify-items: center;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+}
+
+/* header text styles */
+
+h2 {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 42px;
+  transform: scale(1.1, 1);
+  text-align: center;
+}
+
+h3 {
+  font-family: Roboto;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-align: center;
+  color: black;
+  transform: scale(1.1, 1);
+}
+
+h4 {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  transform: scale(1.1, 1);
+}
+
+.shop {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* detailed adjustment of elements in the main grids */
+
+.subheading {
+  align-self: center;
+  padding-top: 72px;
+  text-align: center;
+  grid-column: 1 / span 4;
+  align-self: center;
+}
+
+/* individual pillow grids */
+
+.pillow {
+  align-self: end;
+  padding: 0px 10px;
+  border-right-width: 0.25px;
+  border-right-style: solid;
+  border-right-color: rgb(220,220,220);
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 230px 75px 110px 70px 50px;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.d {
+  border-right-width: 0px;
+}
+
+.pillow img {
+  width: 60%;
+  height: auto;
+}
+
+.description {
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: 100;
+  font-size: 15px;
+  letter-spacing: 0.1px;
+  text-align: justify;
+  color: rgb(140,140,140);
+  padding: 0px 23px 25px 23px;
+  line-height: 1.33;
+}
+
+.price {
+  font-family: Roboto;
+  font-size: 21px;
+  font-weight: 300;
+  text-align: center;
+  transform: scale(1.1, 1);
+  padding-bottom: 13px;
+  color: black;
+}
+
+.delivery {
+  font-family: Roboto;
+  font-weight: 100;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 18px;
+}
+
+/* icons section */
+
+.icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.logo {
+  justify-self: center;
+}
+
+.shopbag {
+  justify-self: right;
+}
+
+/* buttons */
+
+.select-button {
+  margin: 31px 0px;
+  border-width: 0.5px;
+  border-color: rgb(180,180,180);
+  border-style: solid;
+  border-radius: 15px;
+  background-image: linear-gradient(rgb(140,140,140), rgb(100,100,100));
+  box-shadow:0px 5px 10px rgba(0,0,0,0.11);
+}
+
+.select-text {
+  font-family: Roboto;
+  padding: 0px 35px 0px 40px;
+  line-height: 0.3;
+  font-size: 18px;
+  font-weight: 300;
+  transform: scale(1.1, 1);
+  color: white;
+  justify-items: center;
+}
+
+.container {
+  width: 100vw;
+  height: calc(100vh - 50px);
+  min-width: 1100px;
+  margin: -10px;
+  min-height: 100%;
+}
