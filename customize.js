@@ -254,8 +254,8 @@ function toggleCart() {
                 let inspectItem = document.getElementById('item'+ (i+1));
                 totalAmount += items[i]._pricetl;
                 inspectItem.childNodes[3].childNodes[5].innerHTML = "$"+items[i]._pricepc+".00";
-                inspectItem.childNodes[5].setAttribute('onclick', 'deleteItem('+(i+1)+')');
-                inspectItem.childNodes[7].childNodes[1].innerHTML = items[i]._quantity;
+                inspectItem.childNodes[7].setAttribute('onclick', 'deleteItem('+(i+1)+')');
+                inspectItem.childNodes[5].childNodes[1].innerHTML = items[i]._quantity;
                 inspectItem.style.borderBottomWidth = '';
                 inspectItem.style.borderBottomColor = '';
                 inspectItem.style.borderBottomStyle = '';
@@ -287,14 +287,16 @@ function closeCart() {
     const bag = document.getElementById('shopping-bag');
     let items = JSON.parse(localStorage.getItem("itemList"));
     let subtotalSmall = document.getElementById('subtotal');
-    let checkOutButton = document.getElementById('select-button-check-out')
+    let checkOutButton = document.getElementById('select-button-check-out');
+    if (bag.style.visibility === 'visible') {
+        for (let i = 1; i < items.length + 1; i++) {
+            let checkID = 'item' + i;
+            document.getElementById(checkID).style.visibility = 'hidden';
+        }
+    }
     bag.style.visibility = 'hidden';
     subtotalSmall.style.visibility = 'hidden';
     checkOutButton.style.visibility = 'hidden';
-    for (let i = 1; i < items.length + 1; i++) {
-        let checkID = 'item' + i;
-        document.getElementById(checkID).style.visibility = 'hidden';
-    }
 }
 
 //change quantity
@@ -359,7 +361,7 @@ function deleteItem(itemNum) {
         for (let i = itemNum; i < presentedNum + 1; i++) {
             let inspectItem = document.getElementById('item' + (i+1));
             inspectItem.setAttribute("id", 'item'+i);
-            inspectItem.childNodes[5].setAttribute('onclick', 'deleteItem('+i+')');
+            inspectItem.childNodes[7].setAttribute('onclick', 'deleteItem('+i+')');
         }
         let totalAmount = 0;
         for (let i = 0; i < presentedNum; i++) {
