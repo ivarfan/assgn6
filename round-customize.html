@@ -10,27 +10,27 @@
     <script src="customize.js"></script>
   </head>
 
-  <body>
+  <body onload="displayOption()">
 
     <div class="container">
 
       <!-- Title bar/header -->
       <header>
-        <a href="index.html"><img src="Photos/LogoSmall.png" alt="small logo" class="icon logo"></a>
-        <h4 class="about">About</h4>
-        <a href="product-select.html"><h4 class="shop">Shop</h4></a>
-        <h4 class="contact">Contact</h4>
+        <a href="index.html" onclick='closeCart()'><img src="Photos/LogoSmall.png" alt="small logo" class="icon logo"></a>
+        <h4 class="about" onclick='closeCart()'>About</h4>
+        <a href="product-select.html" onclick='closeCart()'><h4 class="shop">Shop</h4></a>
+        <h4 class="contact" onclick='closeCart()'>Contact</h4>
         <img src="Icons/ShoppingBag.png" class="icon shopbag" alt="shopping bag icon" onclick='toggleCart()'>
-        <img src="Icons/Profile.png" class="icon profile" alt="profile icon">
+        <img src="Icons/Profile.png" class="icon profile" alt="profile icon" onclick='closeCart()'>
       </header>
       
       <!-- Navigation to go back -->
-      <nav>
+      <nav onclick='closeCart()'>
         <a href="product-select.html">&lt; Back</a>
       </nav>
 
       <!-- Main Elements -->
-      <main>
+      <main onclick='closeCart()'>
         <div class="subheading">
           <h2>Customize Your<br />Round Pillow</h2>
         </div>
@@ -95,29 +95,31 @@
       <!-- Shopping Bag Section -->
       <div id="shopping-bag">
         <div id="items-purchased">
-          <img src="Photos/RoundPillowMains-blue.png" class="purchased-photo" alt="Cozy Denim" />
-          <div class="purchased-description">
-            <p class="purchased-title">Round Pillow</p>
-            <p class="purchased-detailed">Rainy Day<br />Hypoallergenic Poly-blend</p>
-            <p class="purchased-price-tag">$180</p>
-          </div>
-          <p class="delete">X</p>
-          <div class="shopping-bag-amount-toggle">
-            <p class="shopping-bag-quantity-name">2</p>
-            <p class="shopping-bag-quantity-name-drop">v<p>
+          <div class = "items-listing" id="item1">
+              <img src="Photos/RoundPillowMains-blue.png" class="purchased-photo" alt="Cozy Denim" />
+              <div class="purchased-description">
+                <p class="purchased-title">Round Pillow</p>
+                <p class="purchased-detailed">Rainy Day<br />Hypoallergenic Poly-blend</p>
+                <p class="purchased-price-tag">$180</p>
+              </div>
+              <p class="delete" onclick = 'deleteItem(1)'>X</p>
+              <div class="shopping-bag-amount-toggle">
+                <p class="shopping-bag-quantity-name">2</p>
+                <p class="shopping-bag-quantity-name-drop">v<p>
+              </div>
           </div>
         </div>
         <div id="subtotal">
           <p class="price-breakdown-left">Subtotal</p>
-          <p class="price-breakdown-right">$180.00</p>
+          <p class="price-breakdown-right" id="subtotal-small">$180.00</p>
           <p class="price-breakdown-left">Tax (7%)</p>
-          <p class="price-breakdown-right">$12.60</p>
+          <p class="price-breakdown-right" id="tax-small">$12.60</p>
           <p class="price-breakdown-left">Delivery Fee</p>
           <p class="price-breakdown-right">Free</p>
           <p class="price-total-left">Total</p>
-          <p class="price-total-right">$192.60</p>
+          <p class="price-total-right" id="total-small">$192.60</p>
         </div>
-        <div class="select-button-check-out">
+        <div id="select-button-check-out">
           <p class="select-text-check-out-text">Check Out</p>
         </div>
       </div>
@@ -127,7 +129,7 @@
       </div>
 
       <!-- Check Out Section -->
-      <footer>
+      <footer onclick='closeCart()'>
         <img src="Icons/Ship.png" class="icon ship" alt="shipping icon">
         <h4 class="delivery">Delivers: Feb 02, 2020 <br />Free Shipping</h4>
         <h4 class="price">$60.00</h4>

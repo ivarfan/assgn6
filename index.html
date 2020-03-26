@@ -7,25 +7,63 @@
     <title>Fluff Stuff - Welcome</title>
     <link rel="stylesheet" type="text/css" href="homepage-style.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <script src="customize.js"></script>
   </head>
 
-  <body>
+  <body onload="displayOption()">
 
     <div class="container">
       <!-- Title bar/header -->
       <header>
-        <h4 class="about">About</h4>
-        <a href="product-select.html" id="shop"><h4 class="shop">Shop</h4></a>
-        <h4 class="contact">Contact</h4>
-        <img src="Icons/ShoppingBag.png" class="icon shopbag" alt="shopping bag icon">
-        <img src="Icons/Profile.png" class="icon profile" alt="profile icon">
+        <a href="index.html" onclick='closeCart()'><img src="Photos/LogoSmall.png" alt="small logo" class="icon logo"></a>
+        <h4 class="about" onclick='closeCart()'>About</h4>
+        <a href="product-select.html" onclick='closeCart()'><h4 class="shop">Shop</h4></a>
+        <h4 class="contact" onclick='closeCart()'>Contact</h4>
+        <img src="Icons/ShoppingBag.png" class="icon shopbag" alt="shopping bag icon" onclick='toggleCart()'>
+        <img src="Icons/Profile.png" class="icon profile" alt="profile icon" onclick='closeCart()'>
       </header>
       <!-- Main Elements -->
-      <main>
+      <main onclick='closeCart()'>
         <img class="large-logo" src="Photos/LogoLarge.png" alt="Fluff Stuff Logo" />
         <a href="product-select.html">Start Creating Your Own ></a>
         <img class="pillow-pic" src="Photos/PillowFront.png" alt="landing pillow" />
       </main>
+
+      <!-- Shopping Bag Section -->
+      <div id="shopping-bag">
+        <div id="items-purchased">
+          <div class = "items-listing" id="item1">
+              <img src="Photos/RoundPillowMains-blue.png" class="purchased-photo" alt="Cozy Denim" />
+              <div class="purchased-description">
+                <p class="purchased-title">Round Pillow</p>
+                <p class="purchased-detailed">Rainy Day<br />Hypoallergenic Poly-blend</p>
+                <p class="purchased-price-tag">$180</p>
+              </div>
+              <p class="delete" onclick = 'deleteItem(1)'>X</p>
+              <div class="shopping-bag-amount-toggle">
+                <p class="shopping-bag-quantity-name">2</p>
+                <p class="shopping-bag-quantity-name-drop">v<p>
+              </div>
+          </div>
+        </div>
+        <div id="subtotal">
+          <p class="price-breakdown-left">Subtotal</p>
+          <p class="price-breakdown-right" id="subtotal-small">$180.00</p>
+          <p class="price-breakdown-left">Tax (7%)</p>
+          <p class="price-breakdown-right" id="tax-small">$12.60</p>
+          <p class="price-breakdown-left">Delivery Fee</p>
+          <p class="price-breakdown-right">Free</p>
+          <p class="price-total-left">Total</p>
+          <p class="price-total-right" id="total-small">$192.60</p>
+        </div>
+        <div id="select-button-check-out">
+          <p class="select-text-check-out-text">Check Out</p>
+        </div>
+      </div>
+
+      <div id="item-numbers" onclick="toggleCart()">
+        <p id="item-number-text">0</p>
+      </div>
 
     </div>
   </body>

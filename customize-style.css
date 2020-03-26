@@ -405,7 +405,7 @@ h4 {
 
 .container {
   width: 100vw;
-  height: calc(100vh - 50px);
+  height: 500px;
   min-width: 1100px;
   margin: -10px;
   min-height: 100%;
@@ -418,7 +418,7 @@ h4 {
   position: relative;
   background-color: white;
   z-index: 2;
-  height: 330px;
+  height: 320px;
   width: 400px;
   border-radius: 15px;
   border-width: 1px;
@@ -427,7 +427,7 @@ h4 {
   bottom: 790px;
   left: calc(50% + 100px);
   grid-template-columns: 1fr;
-  grid-template-rows: 140px 120px 70px;
+  grid-template-rows: 110px 120px 70px;
   justify-items: center;
   justify-content: center;
   align-items: center;
@@ -442,7 +442,13 @@ h4 {
 }
 
 #items-purchased {
-  margin-left: 12px;
+  display: grid;
+  grid-template-columns: 370px;
+  grid-template-rows: 110px;
+}
+
+.items-listing {
+  visibility: hidden;
   display: grid;
   grid-template-columns: 90px 140px 75px 65px;
   grid-template-rows: 1fr;
@@ -451,9 +457,6 @@ h4 {
   justify-content: center;
   align-items: center;
   align-content: center;
-  border-bottom-width: 0.75px;
-  border-bottom-color: rgb(180,180,180);
-  border-bottom-style: solid;
 }
 
 .purchased-description {
@@ -557,6 +560,8 @@ h4 {
 }
 
 #subtotal {
+  visibility: hidden;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: 170px 170px;
   grid-template-rows: 22px 22px 22px 55px;
@@ -594,7 +599,9 @@ h4 {
   transform: scale(1.1, 1);
 }
 
-.select-button-check-out{
+#select-button-check-out{
+  visibility: hidden;
+  margin-top:20px;
   justify-self: stretch;
   margin-left: 233px;
   margin-right: 22px;
@@ -622,14 +629,15 @@ h4 {
 /* number of items in bag */
 #item-numbers {
   visibility: hidden;
-  position: relative;
+  position: absolute;
   z-index: 3;
-  bottom: 1162px;
-  left: calc(50% + 435px);
+  top: 2px;
+  left: calc(50% + 419px);
   width: 20px;
   height: 20px;
   border-radius: 10px;
   background-color: rgb(100, 100, 100);
+  margin: 20px 15px;
 }
 
 #item-number-text {
@@ -638,8 +646,8 @@ h4 {
   font-size: 11px;
   color: white;
   text-align: center;
-  padding-top: 2.5px;
   transform: scale(1.1, 1);
+  line-height: 0;
 }
 
 /* checkout section */
